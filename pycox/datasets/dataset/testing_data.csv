@@ -1,0 +1,101 @@
+Site recode ICD-O-3/WHO 2008,RX Summ--Surg Prim Site (1998+),Radiation recode,"Chemotherapy recode (yes, no/unk)","Derived AJCC T, 7th ed (2010-2015)","Derived AJCC N, 7th ed (2010-2015)","Derived AJCC M, 7th ed (2010-2015)",ICD-O-3 Hist/behav,Age,Sex,Laterality,Regional nodes examined (1988+),Regional nodes positive (1988+),CS tumor size (2004-2015),End Calc Vital Status (Adjusted),Number of Intervals (Calculated)
+Lung and Bronchus,33,None/Unknown,Yes,T2a,N2,M0,"8140/3: Adenocarcinoma, NOS",52,Female,Right - origin of primary,16,3,4,Alive,60
+Lung and Bronchus,33,None/Unknown,Yes,T4,N2,M0,"8140/3: Adenocarcinoma, NOS",71,Male,Right - origin of primary,13,3,1.5,Alive,60
+Lung and Bronchus,33,None/Unknown,Yes,T2a,N2,M0,"8140/3: Adenocarcinoma, NOS",75,Male,Right - origin of primary,9,2,4,Alive,60
+Lung and Bronchus,33,None/Unknown,Yes,T2a,N2,M0,"8260/3: Papillary adenocarcinoma, NOS",59,Male,Right- origin of primary,24,5,3,Alive,60
+Lung and Bronchus,33,None/Unknown,No/Unknown,T2a,N2,M0,"8140/3: Adenocarcinoma, NOS",62,Male,Left - origin of primary,14,6,2,Alive,60
+Lung and Bronchus,33,Beam radiation,Yes,T2a,N2,M0,"8140/3: Adenocarcinoma, NOS",58,Female,Left - origin of primary,7,2,3,Alive,60
+Lung and Bronchus,56,None/Unknown,Yes,T4,N1,M0,"8070/3: Squamous cell carcinoma, NOS",61,Male,Left- origin of primary,24,1,4,Alive,60
+Lung and Bronchus,33,None/Unknown,Yes,T2a,N2,M0,"8140/3: Adenocarcinoma, NOS",66,Male,Left - origin of primary,20,4,3,Alive,60
+Lung and Bronchus,33,None/Unknown,Yes,T2a,N2,M0,"8070/3: Squamous cell carcinoma, NOS",60,Male,Left - origin of primary,29,7,4,Alive,60
+Lung and Bronchus,33,None/Unknown,Yes,T2a,N2,M0,"8140/3: Adenocarcinoma, NOS",39,Male,Left - origin of primary,15,3,2,Alive,60
+Lung and Bronchus,33,None/Unknown,Yes,T2b,N2,M0,8560/3: Adenosquamous carcinoma,71,Female,Right - origin of primary,19,10,4,Alive,60
+Lung and Bronchus,33,Beam radiation,Yes,T2a,N2,M0,"8140/3: Adenocarcinoma, NOS",73,Male,Left - origin of primary,23,5,2.5,Alive,60
+Lung and Bronchus,33,None/Unknown,Yes,T1,N2,M0,"8140/3: Adenocarcinoma, NOS",63,Female,Right- origin of primary,11,1,1,Alive,60
+Lung and Bronchus,56,None/Unknown,Yes,T2a,N2,M0,"8140/3: Adenocarcinoma, NOS",60,Female,Right - origin of primary,10,1,4,Alive,60
+Lung and Bronchus,33,Beam radiation,Yes,T2b,N2,M0,"8480/3: Squamous cell carcinoma,",69,Male,Right - origin of primary,22,7,5,Alive,60
+Lung and Bronchus,33,Beam radiation,Yes,T3,N2,M0,"8140/3: Adenocarcinoma, NOS",53,Male,Right - origin of primary,28,23,4,Alive,60
+Lung and Bronchus,33,Beam radiation,Yes,T3,N1,M0,"8140/3: Adenocarcinoma, NOS",63,Male,Left - origin of primary,17,3,5,Alive,60
+Lung and Bronchus,33,Beam radiation,Yes,T2a,N2,M0,"8140/3: Adenocarcinoma, NOS",55,Male,Right - origin of primary,27,4,4,Alive,60
+Lung and Bronchus,33,None/Unknown,Yes,T2a,N2,M0,"8140/3: Adenocarcinoma, NOS",57,Female,Left - origin of primary,28,2,5,Alive,60
+Lung and Bronchus,33,Beam radiation,Yes,T3,N2,M0,"8070/3: Squamous cell carcinoma, NOS",57,Male,Right - origin of primary,13,4,7,Alive,60
+Lung and Bronchus,33,None/Unknown,Yes,T2a,N2,M0,"8140/3: Adenocarcinoma, NOS",65,Female,Left - origin of primary,10,3,3,Alive,60
+Lung and Bronchus,33,None/Unknown,Yes,T3,N2,M0,"8070/3: Squamous cell carcinoma, NOS",61,Male,Left - origin of primary,21,2,6,Alive,51
+Lung and Bronchus,33,Beam radiation,Yes,T2a,N2,M0,"8140/3: Adenocarcinoma, NOS",47,Male,Left - origin of primary,12,12,3,Alive,60
+Lung and Bronchus,33,Beam radiation,Yes,T2b,N2,M0,"8070/3: : Squamous cell carcinoma, NOS",68,Male,Right - origin of primary,37,3,5,Alive,60
+Lung and Bronchus,33,None/Unknown,Yes,T3,N1,M0,"8070/3: Squamous cell carcinoma, NOS",69,Male,Left - origin of primary,30,1,5,Alive,60
+Lung and Bronchus,33,Beam radiation,Yes,T2a,N2,M0,"8070/3: Squamous cell carcinoma, NOS",55,Male,Right - origin of primary,19,1,5,Alive,51
+Lung and Bronchus,33,Beam radiation,Yes,T3,N2,M0,"8070/3: Squamous cell carcinoma, NOS",61,Male,left - origin of primary,23,2,6,Dead,36
+Lung and Bronchus,33,None/Unknown,Yes,T3,N2,M0,"8070/3: Squamous cell carcinoma, NOS",65,Male,Left - origin of primary,13,2,4,Dead,26
+Lung and Bronchus,33,Beam radiation,Yes,T2a,N0,M0,"8071/3: Squamous cell carcinoma, keratinizing, NOS",61,Male,Right - origin of primary,44,5,3,Dead,38
+Lung and Bronchus,33,Beam radiation,Yes,T2b,N2,M0,"8070/3: Squamous cell carcinoma, NOS",51,Female,Right - origin of primary,17,12,5,Dead,10
+Lung and Bronchus,56,None/Unknown,No/Unknown,T3,N1,M0,"8070/3: Squamous cell carcinoma, NOS",59,Male,Right - origin of primary,25,2,6,Dead,7
+Lung and Bronchus,33,None/Unknown,Yes,T3,N2,M0,"8070/3: Squamous cell carcinoma, NOS",53,Female,Right - origin of primary,29,5,5,Dead,7
+Lung and Bronchus,33,None/Unknown,Yes,T2a,N2,M0,"8140/3: Adenocarcinoma, NOS",62,Male,Right - origin of primary,15,1,3,Dead,32
+Lung and Bronchus,33,None/Unknown,Yes,T1,N2,M0,"8140/3: Adenocarcinoma, NOS",54,Female,Right - origin of primary,3,2,2,Dead,26
+Lung and Bronchus,56,None/Unknown,Yes,T2b,N2,M0,"8070/3: Squamous cell carcinoma, NOS",65,Male,Right - origin of primary,12,2,4,Dead,39
+Lung and Bronchus,33,None/Unknown,Yes,T2a,N2,M0,8560/3: Adenosquamous carcinoma,57,Male,Left - origin of primary,11,4,3.5,Dead,37
+Lung and Bronchus,56,None/Unknown,Yes,T2b,N2,M0,"8140/3: Adenocarcinoma, NOS",51,Male,Left - origin of primary,11,4,5,Dead,23
+Lung and Bronchus,33,None/Unknown,Yes,T2a,N2,M0,"8140/3: Adenocarcinoma, NOS",46,Female,Right - origin of primary,20,19,5,Dead,22
+Lung and Bronchus,33,None/Unknown,Yes,T3,N2,M0,"8070/3: Squamous cell carcinoma, NOS",70,Female,Right - origin of primary,20,4,7,Dead,14
+Lung and Bronchus,33,None/Unknown,Yes,T2b,N2,M0,8574/3:,76,Male,Right - origin of primary,19,6,5,Dead,36
+Lung and Bronchus,33,Beam radiation,Yes,T4,N2,M0,8480/3: Mucinous adenocarcinoma,44,Female,Right - origin of primary,14,4,6,Dead,14
+Lung and Bronchus,33,None/Unknown,Yes,T2a,N2,M0,"8140/3: Adenocarcinoma, NOS",57,Male,Right - origin of primary,13,6,3,Dead,33
+Lung and Bronchus,33,Beam radiation,Yes,T3,N2,M0,"8140/3: Adenocarcinoma, NOS",59,Male,Right - origin of primary,11,1,4.5,Dead,29
+Lung and Bronchus,56,None/Unknown,No/Unknown,T2b,N2,M0,"8070/3: Squamous cell carcinoma, NOS",63,Male,Left - origin of primary,6,5,4.5,Dead,35
+Lung and Bronchus,56,None/Unknown,Yes,T2b,N2,M0,"8070/3: Squamous cell carcinoma, NOS",68,Male,Left - origin of primary,10,6,4.5,Dead,6
+Lung and Bronchus,33,Beam radiation,Yes,T3,N2,M0,"8140/3: Adenocarcinoma, NOS",53,Male,Right - origin of primary,23,10,5,Dead,53
+Lung and Bronchus,56,None/Unknown,Yes,T2b,N2,M0,"8070/3: Squamous cell carcinoma, NOS",57,Male,Left - origin of primary,10,3,4,Dead,35
+Lung and Bronchus,56,None/Unknown,Yes,T3,N2,M0,"8070/3: Squamous cell carcinoma, NOS",67,Male,Left - origin of primary,20,9,6,Dead,55
+Lung and Bronchus,33,Beam radiation,Yes,T2a,N2,M0,"8140/3: Adenocarcinoma, NOS",52,Male,Right - origin of primary,14,7,3,Dead,37
+Lung and Bronchus,33,None/Unknown,Yes,T4,N2,M0,"8070/3: Squamous cell carcinoma, NOS",57,Male,Right - origin of primary,25,2,5,Dead,22
+Lung and Bronchus,33,None/Unknown,Yes,T4,N0,M0,"8070/3: Squamous cell carcinoma, NOS",59,Female,Right - origin of primary,37,0,7,Dead,59
+Lung and Bronchus,33,Beam radiation,Yes,T4,N2,M0,"8070/3: Squamous cell carcinoma, NOS",61,Male,Right- origin of primary,31,7,8,Dead,30
+Lung and Bronchus,33,None/Unknown,Yes,T4,N0,M0,"8140/3: Adenocarcinoma, NOS",63,Male,Right - origin of primary,19,0,10,Dead,29
+Lung and Bronchus,56,None/Unknown,Yes,T4,N2,M0,"8140/3: Adenocarcinoma, NOS",44,Male,Left - origin of primary,15,4,5,Dead,36
+Lung and Bronchus,33,None/Unknown,Yes,T2a,N2,M0,8560/3: Adenosquamous carcinoma,72,Male,Right - origin of primary,25,2,3,Dead,24
+Lung and Bronchus,33,Beam radiation,Yes,T2a,N2,M0,"8140/3: Adenocarcinoma, NOS",50,Male,Left - origin of primary,11,4,3,Dead,20
+Lung and Bronchus,33,Beam radiation,Yes,T2a,N2,M0,"8140/3: Adenocarcinoma, NOS",51,Female,Left - origin of primary,16,5,4,Dead,19
+Lung and Bronchus,56,Beam radiation,Yes,T3,N2,M0,"8070/3: Squamous cell carcinoma,  NOS",59,Male,Left - origin of primary,9,7,5,Dead,12
+Lung and Bronchus,33,None/Unknown,Yes,T2b,N2,M0,"8070/3: Squamous cell carcinoma,  NOS",49,Male,Left - origin of primary,40,37,7,Dead,12
+Lung and Bronchus,33,Beam radiation,Yes,T3,N2,M0,"8070/3: Squamous cell carcinoma, NOS",56,Male,Right - origin of primary,16,3,5,Dead,30
+Lung and Bronchus,56,None/Unknown,Yes,T4,N1,M0,"8140/3: Adenocarcinoma, NOS",64,Male,Left - origin of primary,11,1,6,Dead,36
+Lung and Bronchus,33,Beam radiation,Yes,T3,N2,M0,"8140/3: Adenocarcinoma, NOS",52,Male,Right - origin of primary,47,29,2,Dead,28
+Lung and Bronchus,33,Beam radiation,Yes,T4,N2,M0,"8070/3: Squamous cell carcinoma, NOS",61,Female,Left - origin of primary,9,3,9.2,Dead,40
+Lung and Bronchus,33,None/Unknown,Yes,T2a,N2,M0,"8070/3: Squamous cell carcinoma, NOS",57,Male,Left - origin of primary,24,4,3,Dead,30
+Lung and Bronchus,33,None/Unknown,Yes,T3,N2,M0,"8070/3: Squamous cell carcinoma, NOS",53,Male,Right - origin of primary,11,3,7.5,Dead,51
+Lung and Bronchus,33,Beam radiation,Yes,T2a,N2,M0,"8260/3: Squamous cell carcinoma, NOS",65,Male,Right - origin of primary,21,1,4,Dead,14
+Lung and Bronchus,33,None/Unknown,Yes,T3,N1,M0,"8070/3: Squamous cell carcinoma, NOS",68,Male,Right - origin of primary,35,2,7,Dead,51
+Lung and Bronchus,33,Beam radiation,Yes,T2b,N2,M0,"8140/3: Adenocarcinoma, NOS",47,Female,Right - origin of primary,34,8,5,Dead,36
+Lung and Bronchus,33,None/Unknown,Yes,T3,N2,M0,"8070/3: Squamous cell carcinoma, NOS",60,Male,Right - origin of primary,27,9,5,Dead,36
+Lung and Bronchus,33,Beam radiation,Yes,T3,N2,M0,"8070/3: Squamous cell carcinoma, NOS",53,Male,Right - origin of primary,26,16,10,Dead,48
+Lung and Bronchus,56,None/Unknown,Yes,T4,N0,M0,"8012/3: Large cell carcinoma, NOS",74,Male,Left - origin of primary,6,0,7,Dead,24
+Lung and Bronchus,33,None/Unknown,No/Unknown,T4,N2,M0,"8070/3: Squamous cell carcinoma, NOS",74,Male,Left - origin of primary,18,7,5,Dead,20
+Lung and Bronchus,33,Beam radiation,Yes,T3,N1,M0,"8070/3: Squamous cell carcinoma, NOS",47,Male,Right - origin of primary,33,7,5,Dead,19
+Lung and Bronchus,33,None/Unknown,Yes,T4,N2,M0,"8070/3: Squamous cell carcinoma, NOS",64,Male,Right - origin of primary,11,3,7,Dead,51
+Lung and Bronchus,33,None/Unknown,Yes,T3,N2,M0,"8070/3: Squamous cell carcinoma, NOS",71,Male,Right - origin of primary,17,6,7,Dead,42
+Lung and Bronchus,33,None/Unknown,Yes,T2a,N2,M0,"8140/3: Adenocarcinoma, NOS",65,Female,Left - origin of primary,50,3,3,Untraced,12
+Lung and Bronchus,33,None/Unknown,Yes,T2a,N2,M0,"8140/3: Adenocarcinoma, NOS",52,Male,Right - origin of primary,13,3,5,Untraced,13
+Lung and Bronchus,33,Beam radiation,Yes,T4,N1,M0,"8140/3: Adenocarcinoma, NOS",54,Male,Right - origin of primary,28,23,3,Untraced,7
+Lung and Bronchus,33,None/Unknown,Yes,T2a,N2,M0,"8140/3: Adenocarcinoma, NOS",70,Female,Left- origin of primary,13,2,3.5,Untraced,49
+Lung and Bronchus,33,Beam radiation,Yes,T2b,N2,M0,"8140/3: Adenocarcinoma, NOS",53,Female,Left- origin of primary,16,15,3,Untraced,40
+Lung and Bronchus,33,None/Unknown,Yes,T2a,N2,M0,"8140/3: Adenocarcinoma, NOS",48,Male,Right - origin of primary,12,9,5,Untraced,24
+Lung and Bronchus,33,None/Unknown,Yes,T4,N2,M0,"8070/3: Squamous cell carcinoma, NOS",60,Female,Right- origin of primary,51,25,4,Untraced,27
+Lung and Bronchus,33,Beam radiation,Yes,T2a,N2,M0,"8140/3: Adenocarcinoma, NOS",63,Male,Right - origin of primary,18,10,3,Untraced,35
+Lung and Bronchus,56,None/Unknown,Yes,T3,N2,M0,"8070/3: Squamous cell carcinoma, NOS",62,Male,Left - origin of primary,20,3,7,Untraced,40
+Lung and Bronchus,33,None/Unknown,Yes,T2a,N2,M0,8255/3: Adenocarcinoma with mixed subtypes,54,Male,Right - origin of primary,27,2,3,Untraced,36
+Lung and Bronchus,33,None/Unknown,Yes,T3,N1,M0,"8070/3: Squamous cell carcinoma,  NOS",55,Male,Left - origin of primary,11,3,8,Untraced,37
+Lung and Bronchus,56,None/Unknown,Yes,T4,N2,M0,"8070/3: Squamous cell carcinoma,  NOS",58,Male,Left - origin of primary,12,1,9,Untraced,26
+Lung and Bronchus,56,None/Unknown,Yes,T4,N0,M0,"8070/3: Squamous cell carcinoma,  NOS",58,Male,Left - origin of primary,23,0,4,Untraced,18
+Lung and Bronchus,33,None/Unknown,Yes,T4,N2,M0,"8140/3: Adenocarcinoma, NOS",57,Female,Right - origin of primary,12,0,5,Untraced,15
+Lung and Bronchus,56,Beam radiation,Yes,T2b,N2,M0,"8140/3: Adenocarcinoma, NOS",55,Female,Left - origin of primary,17,9,5,Untraced,36
+Lung and Bronchus,33,Beam radiation,Yes,T4,N2,M0,"8070/3: Squamous cell carcinoma,  NOS",69,Male,Left- origin of primary,12,1,12,Untraced,41
+Lung and Bronchus,33,None/Unknown,Yes,T2b,N2,M0,"8070/3: Squamous cell carcinoma, NOS",53,Male,Right - origin of primary,27,3,4.5,Untraced,36
+Lung and Bronchus,33,None/Unknown,Yes,T2a,N2,M0,"8070/3: Squamous cell carcinoma, NOS",55,Male,Right - origin of primary,14,3,4,Untraced,24
+Lung and Bronchus,33,Beam radiation,Yes,T2a,N2,M0,"8070/3: Squamous cell carcinoma, NOS",53,Male,Left - origin of primary,14,5,3,Untraced,36
+Lung and Bronchus,33,None/Unknown,Yes,T1a,N2,M0,"8140/3: Adenocarcinoma, NOS",52,Male,Right - origin of primary,18,1,1.7,Untraced,36
+Lung and Bronchus,33,None/Unknown,Yes,T3,N2,M0,8480/3: Mucinous adenocarcinoma,64,Male,Left - origin of primary,13,12,3,Untraced,16
+Lung and Bronchus,33,None/Unknown,Yes,T3,N1,M0,"8140/3: Adenocarcinoma, NOS",68,Male,Right - origin of primary,2,1,8,Untraced,43
+Lung and Bronchus,56,None/Unknown,No/Unknown,T2a,N2,M0,"8070/3: Squamous cell carcinoma, NOS",60,Male,RIght - origin of primary,21,2,5,Untraced,35
+Lung and Bronchus,33,None/Unknown,Yes,T4,N1,M0,8560/3: Adenosquamous carcinoma,71,Male,Right - origin of primary,2,1,5,Untraced,12
+Lung and Bronchus,56,None/Unknown,Yes,T3,N2,M0,"8140/3: Adenocarcinoma, NOS",43,Female,Left - origin of primary,9,9,6,Untraced,10
