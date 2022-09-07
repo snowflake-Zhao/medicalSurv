@@ -10,19 +10,17 @@
 #
 # The main benefit Cox-CC (and the other Cox methods) has over Logistic-Hazard is that it is a continuous-time method, meaning we do not need to discretize the time scale.
 
+import matplotlib.pyplot as plt
 # In[1]:
 import numpy as np
-import matplotlib.pyplot as plt
+import pandas as pd
+import torch
+import torchtuples as tt
 from sklearn.preprocessing import StandardScaler
 from sklearn_pandas import DataFrameMapper
 
-import torch
-import torchtuples as tt
-
-from pycox.datasets import metabric
-from pycox.models import CoxPH
 from pycox.evaluation import EvalSurv
-import pandas as pd
+from pycox.models import CoxPH
 
 # In[2]:
 
@@ -44,8 +42,8 @@ _ = torch.manual_seed(123)
 # In[4]:
 
 # Step 1 data collection
-df_train = pd.read_csv("G:\Project\pycox-master\pycox\datasets\dataset\\training_data.csv")
-df_test = pd.read_csv("G:\Project\pycox-master\pycox\datasets\dataset\\testing_data.csv")
+df_train = pd.read_csv("G:\Project\medicalSurv\pycox\datasets\dataset\\training_data.csv")
+df_test = pd.read_csv("G:\Project\medicalSurv\pycox\datasets\dataset\\testing_data.csv",cache_dates=False)
 
 df_train = df_train.loc[df_train["RX Summ--Surg Prim Site (1998+)"].isin([33,56])]
 
@@ -170,6 +168,7 @@ x_mapper = DataFrameMapper(standardize + leave)
 x_train = x_mapper.fit_transform(df_train).astype('float32')
 x_val = x_mapper.transform(df_val).astype('float32')
 x_test = x_mapper.transform(df_test).astype('float32')
+print(list(df_test))
 
 x_sub_test = x_test[76:]
 x_test = x_test[:76]
@@ -191,7 +190,7 @@ val = x_val, y_val
 
 
 in_features = x_train.shape[1]
-num_nodes = [39 , 12]
+num_nodes = [60,43]
 out_features = 1
 batch_norm = True
 dropout = 0.5
@@ -276,7 +275,7 @@ def find_the_index(num, arr):
 # model.predict()
 _ = model.compute_baseline_hazards()
 
-
+model.save_net("surv_model")
 for row in range(x_sub_test.shape[0]):
     prediction = np.absolute(model.predict(x_test))
     append = np.append(prediction, durations_test.reshape(-1, 1), axis=1)
@@ -286,12 +285,12 @@ for row in range(x_sub_test.shape[0]):
     sort_duration = np.copy(durations_test)
     sort_duration.reshape(-1).sort()
 
-    row_hazard_rate = model.predict(np.reshape(x_sub_test[row],(-1,107)))
+    row_hazard_rate = model.predict(np.reshape(x_sub_test[row],(-1,100)))
     the_index = find_the_index(row_hazard_rate[0][0], sort_prediction)
     cal_duration = sort_duration[the_index[0]] + 0.1
 
     x_test_list = x_test.tolist()
-    x_test_list.append(np.reshape(x_sub_test[row], (-1, 107)).tolist()[0])
+    x_test_list.append(np.reshape(x_sub_test[row], (-1, 100)).tolist()[0])
 
     durations_test_list = durations_test.tolist()
     durations_test_list.append(cal_duration)
@@ -308,12 +307,7 @@ for row in range(x_sub_test.shape[0]):
 
 
 
-# In[19]:
-
-# model.predict()
 surv = model.predict_surv_df(x_test)
-
-# In[20]:
 
 
 surv.iloc[:, :5].plot()
