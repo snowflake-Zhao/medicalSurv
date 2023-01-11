@@ -1,89 +1,89 @@
 import pandas as pd
 from lifelines import CoxPHFitter
+import utilities as Utils
 
 
 
-df = Utils.read_from_file("data/breast.csv")
-df = Utils.filter_col_data(df, ["Age recode with <1 year olds", "Marital status at diagnosis", "Grade (thru 2017)",
-                                "ICD-O-3 Hist/behav",
-                                "Breast - Adjusted AJCC 6th T (1988-2015)", "Breast - Adjusted AJCC 6th N (1988-2015)",
-                                "Breast - Adjusted AJCC 6th M (1988-2015)", "CS Tumor Size/Ext Eval (2004-2015)",
-                                "CS Reg Node Eval (2004-2015)", "CS Mets Eval (2004-2015)",
-                                "Laterality", "Breast Subtype (2010+)",
-                                "RX Summ--Surg Prim Site (1998+)", "Radiation recode",
+
+df_train = pd.read_csv("G:\Project\medicalSurv\pycox\datasets\dataset\\training_data.csv")
+df_test = pd.read_csv("G:\Project\medicalSurv\pycox\datasets\dataset\\testing_data.csv",cache_dates=False)
+
+df_train = df_train.loc[df_train["RX Summ--Surg Prim Site (1998+)"].isin([33,56])]
+
+def adjust_tumor_size(df):
+    return df/10
+
+def age_recode(df):
+    if df >= 15 and df<=19:
+        return "15-19 years"
+    elif df >= 20 and df<=24:
+        return "20-24 years"
+    elif df >= 25 and df<=29:
+        return "25-29 years"
+    elif df >= 30 and df<=34:
+        return "30-34 years"
+    elif df >= 35 and df<=39:
+        return "35-39 years"
+    elif df >= 40 and df<=44:
+        return "40-44 years"
+    elif df >= 45 and df<=49:
+        return "45-49 years"
+    elif df >= 50 and df<=54:
+        return "50-54 years"
+    elif df >= 55 and df<=59:
+        return "55-59 years"
+    elif df >= 60 and df<=64:
+        return "60-64 years"
+    elif df >= 65 and df<=69:
+        return "65-69 years"
+    elif df >= 70 and df<=74:
+        return "70-74 years"
+    elif df >= 75 and df<=79:
+        return "75-79 years"
+    elif df >= 80 and df<=84:
+        return "80-84 years"
+    elif df >=85:
+        return "85+ years"
+    else:
+        raise ValueError("Invalid parameter map_func.")
+
+df_test["Age recode"] = df_test["Age"].apply(age_recode)
+df_train["CS tumor size (2004-2015)"] = df_train["CS tumor size (2004-2015)"].apply(adjust_tumor_size)
+df_test = df_test.drop("Age",axis=1)
+
+df = df_test.append(df_train)
+
+def encode_event(df):
+    if(df == "Dead"):
+        return 1
+    else:
+        return 0
+
+df = pd.get_dummies(df, prefix=["Site recode ICD-O-3/WHO 2008", "RX Summ--Surg Prim Site (1998+)", "Radiation recode",
                                 "Chemotherapy recode (yes, no/unk)",
-                                "End Calc Vital Status (Adjusted)", "Number of Intervals (Calculated)"])
+                                "Derived AJCC T, 7th ed (2010-2015)",
+                                "Derived AJCC N, 7th ed (2010-2015)",
+                                "Derived AJCC M, 7th ed (2010-2015)", "ICD-O-3 Hist/behav",
+                                "Age recode", "Sex",
+                                "Laterality"],
+                    columns=["Site recode ICD-O-3/WHO 2008", "RX Summ--Surg Prim Site (1998+)", "Radiation recode",
+                             "Chemotherapy recode (yes, no/unk)",
+                             "Derived AJCC T, 7th ed (2010-2015)",
+                             "Derived AJCC N, 7th ed (2010-2015)",
+                             "Derived AJCC M, 7th ed (2010-2015)", "ICD-O-3 Hist/behav",
+                             "Age recode", "Sex",
+                             "Laterality"])
+df["End Calc Vital Status (Adjusted)"] = df["End Calc Vital Status (Adjusted)"].apply(encode_event)
 
-# take a look of the data info
-Utils.print_data_frame_info(df)
+df_train = df[100:]
+df_test = df[:100]
+Utils.drop_column(df, 'Site recode ICD-O-3/WHO 2008_Lung and Bronchus')
+Utils.drop_column(df, 'Derived AJCC M, 7th ed (2010-2015)_M0')
 
-# according to https://seer.cancer.gov/icd-o-3/sitetype.icdo3.20220429.pdf
-duct_carcinoma_array = ['8500/3: Infiltrating duct carcinoma, NOS', '8501/3: Comedocarcinoma, NOS',
-                        '8502/3: Secretory carcinoma of breast',
-                        '8503/3: Intraductal papillary adenocarcinoma with invasion',
-                        '8504/3: Intracystic carcinoma, NOS', '8507/3: Ductal carcinoma, micropapillary']
-# according to https://seer.cancer.gov/icd-o-3/sitetype.icdo3.20220429.pdf
-lobular_and_other_ductal_array = ['8520/3: Lobular carcinoma, NOS', '8521/3: Infiltrating ductular carcinoma',
-                                  '8522/3: Infiltrating duct and lobular carcinoma',
-                                  '8523/3: Infiltrating duct mixed with other types of carcinoma',
-                                  '8524/3: Infiltrating lobular mixed with other types of carcinoma',
-                                  '8525/3: Polymorphous low grade adenocarcinoma']
-duct_lobular_array = duct_carcinoma_array + lobular_and_other_ductal_array
 
-# filter the ICD-O-3 Hist/behav whose type is DUCT CARCINOM and LOBULAR AND OTHER DUCTAL CA
-df = Utils.select_data_from_values(df, "ICD-O-3 Hist/behav", duct_lobular_array)
-
-# map "RX Summ--Surg Prim Site (1998+)" according to map_breast_surg_type
-df = Utils.map_one_col_data(df, "RX Summ--Surg Prim Site (1998+)", br_utils.map_breast_surg_type)
-
-# map "End Calc Vital Status (Adjusted)" according to map_event_code
-df = Utils.map_one_col_data(df, "End Calc Vital Status (Adjusted)", br_utils.map_event_code)
-
-# take a look of the data info again
-print("------------------After filtering and Mapping------------------")
-Utils.print_data_frame_info(df)
-df = pd.get_dummies(df, prefix=["Age recode with <1 year olds", "Marital status at diagnosis", "Grade (thru 2017)",
-                                "ICD-O-3 Hist/behav",
-                                "Breast - Adjusted AJCC 6th T (1988-2015)",
-                                "Breast - Adjusted AJCC 6th N (1988-2015)",
-                                "Breast - Adjusted AJCC 6th M (1988-2015)", "CS Tumor Size/Ext Eval (2004-2015)",
-                                "CS Reg Node Eval (2004-2015)", "CS Mets Eval (2004-2015)",
-                                "Laterality", "Breast Subtype (2010+)",
-                                "RX Summ--Surg Prim Site (1998+)", "Radiation recode",
-                                "Chemotherapy recode (yes, no/unk)"],
-                    columns=["Age recode with <1 year olds", "Marital status at diagnosis", "Grade (thru 2017)",
-                             "ICD-O-3 Hist/behav",
-                             "Breast - Adjusted AJCC 6th T (1988-2015)",
-                             "Breast - Adjusted AJCC 6th N (1988-2015)",
-                             "Breast - Adjusted AJCC 6th M (1988-2015)", "CS Tumor Size/Ext Eval (2004-2015)",
-                             "CS Reg Node Eval (2004-2015)", "CS Mets Eval (2004-2015)",
-                             "Laterality", "Breast Subtype (2010+)",
-                             "RX Summ--Surg Prim Site (1998+)", "Radiation recode",
-                             "Chemotherapy recode (yes, no/unk)"])
-data = df
-
-print("-----------Training Data-----------")
-print("-----------The row number-----------")
-print(Utils.get_data_frame_row_count(data))
-print("-----------The col number-----------")
-print(Utils.get_data_frame_col_count(data))
-print("-----------The column names are-----------")
-print(Utils.get_data_frame_col_names(data))
-print("-----------The null value summary-----------")
-print(data.isnull().sum())
-
-# ConvergenceWarning: Column(s) ['ICD-O-3 Hist/behav_8525/3: Polymorphous low grade adenocarcinoma', 'Breast - Adjusted AJCC 6th M (1988-2015)_M0', 'CS Mets Eval (2004-2015)_6', 'Laterality_Bilateral, single primary', 'Laterality_Only one side - side unspecified', 'Laterality_Paired site, but no information concerning laterality', 'RX Summ--Surg Prim Site (1998+)_Local tumor destruction'] have very low variance. This may harm convergence. 1) Are you using formula's? Did you mean to add '-1' to the end. 2) Try dropping this redundant column before fitting if convergence fails.
-# Utils.drop_column(training_data, 'ICD-O-3 Hist/behav_8525/3: Polymorphous low grade adenocarcinoma')
-Utils.drop_column(data, 'Breast - Adjusted AJCC 6th M (1988-2015)_M0')
-# Utils.drop_column(training_data, 'Laterality_Bilateral, single primary')
-# Utils.drop_column(training_data, 'CS Mets Eval (2004-2015)_6')
-# Utils.drop_column(training_data, 'Laterality_Only one side - side unspecified')
-# Utils.drop_column(training_data, 'Laterality_Paired site, but no information concerning laterality')
-# Utils.drop_column(training_data,'RX Summ--Surg Prim Site (1998+)_Local tumor destruction')
-
-cph = CoxPHFitter(penalizer=0.004, l1_ratio=0.005)
-cph.fit(data, duration_col='Number of Intervals (Calculated)', event_col='End Calc Vital Status (Adjusted)',
-        show_progress=True, step_size=0.96)
+cph = CoxPHFitter(penalizer=0.01)
+cph.fit(df, duration_col='Number of Intervals (Calculated)', event_col='End Calc Vital Status (Adjusted)',
+        show_progress=True, step_size=0.80)
 '''
 Concordance = 0.64
 Partial AIC = 85456.71

@@ -110,11 +110,11 @@ x_test = df_test.drop("Number of Intervals (Calculated)",axis=1).drop("End Calc 
 random_state = 20
 
 X_train, X_test, y_train, y_test = train_test_split(
-    x_train, y_train, test_size=0.25, random_state=random_state)
+    x_train, y_train, test_size=0.2, random_state=random_state)
 
-rsf = RandomSurvivalForest(n_estimators=959,
-                           min_samples_split=10,
-                           min_samples_leaf=15,
+rsf = RandomSurvivalForest(n_estimators=250,
+                           min_samples_split=32,
+                           min_samples_leaf=5,
                            n_jobs=-1,
                            random_state=random_state)
 rsf.fit(X_train, y_train)

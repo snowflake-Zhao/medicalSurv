@@ -12,6 +12,7 @@
 
 import matplotlib.pyplot as plt
 # In[1]:
+import utilities as Utils
 import numpy as np
 import pandas as pd
 import torch
@@ -42,8 +43,8 @@ _ = torch.manual_seed(123)
 # In[4]:
 
 # Step 1 data collection
-df_train = pd.read_csv("G:\Project\medicalSurv\pycox\datasets\dataset\\training_data.csv")
-df_test = pd.read_csv("G:\Project\medicalSurv\pycox\datasets\dataset\\testing_data.csv",cache_dates=False)
+df_train = pd.read_csv("examples\brca1\dataset\training_data.csv")
+df_test = pd.read_csv("examples\brca1\dataset\test_data.csv",cache_dates=False)
 
 df_train = df_train.loc[df_train["RX Summ--Surg Prim Site (1998+)"].isin([33,56])]
 
@@ -112,10 +113,12 @@ df = pd.get_dummies(df, prefix=["Site recode ICD-O-3/WHO 2008", "RX Summ--Surg P
                              "Derived AJCC M, 7th ed (2010-2015)", "ICD-O-3 Hist/behav",
                              "Age recode", "Sex",
                              "Laterality"])
-df["End Calc Vital Status (Adjusted)"] = df_test["End Calc Vital Status (Adjusted)"].apply(encode_event)
+df["End Calc Vital Status (Adjusted)"] = df["End Calc Vital Status (Adjusted)"].apply(encode_event)
 
 df_train = df[100:]
 df_test = df[:100]
+Utils.get_data_col_info(df_train)
+Utils.get_data_col_info(df_test)
 
 df_val = df_train.sample(frac=0.2)
 df_train = df_train.drop(df_val.index)
@@ -226,14 +229,14 @@ lrfinder.get_best_lr()
 # In[13]:
 
 
-model.optimizer.set_lr(0.1)
+model.optimizer.set_lr(0.000001)
 
 # We include the `EarlyStopping` callback to stop training when the validation loss stops improving. After training, this callback will also load the best performing model in terms of validation loss.
 
 # In[14]:
 
 
-epochs = 60
+epochs = 500
 callbacks = [tt.callbacks.EarlyStopping()]
 verbose = True
 
