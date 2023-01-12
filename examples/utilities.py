@@ -142,7 +142,14 @@ def get_col_values(data, column):
         raise ValueError(form_error_msg("Invalid parameter data."))
     if column is False:
         raise ValueError(form_error_msg("Invalid parameter column."))
-    return data[column].values
+    return set(data[column].unique())
+
+def get_col_values_range(data, column):
+    if is_data_frame(data) is False:
+        raise ValueError(form_error_msg("Invalid parameter data."))
+    if column is False:
+        raise ValueError(form_error_msg("Invalid parameter column."))
+    return data[column].unique()
 
 def get_data_col_info(data):
     if is_data_frame(data) is False:
